@@ -12,6 +12,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <!-- axios -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="<?php echo RUTA_URL; ?>public/js/app.js  " ></script>
 
 </body>
 </html>

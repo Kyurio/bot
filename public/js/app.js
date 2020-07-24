@@ -18,33 +18,35 @@ var app = new Vue({
 
     preguntar: function(){
 
-      console.log(this.pregunta);
-
       capturador = this;
       axios({
         method: 'POST',
         url: '/bjorn/pages/Preguntar',
         data: {
           consultaRecibida: this.pregunta,
-
         }
 
       }).then(function (response) {
         // handle success;
         console.log(response.data);
-        if(response.data === true){
+        if (response.data.respuesta != '') {
 
-          location.href="/aleriaVue/pages/intranet";
+          capturador.respuesta = response.data;
 
-        }else{
+        }else {
 
-          capturador.errors.push('Los datos son incorrectos');
+          capturador.respuesta = 'aguante racing la concha de tu hermana aguante racing'
+
 
         }
+
         //console.log(response.data);
       }).catch(function (error) {
         console.log(error);
       });
+
+      this.pregunta = '';
+
     },
 
   },

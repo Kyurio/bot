@@ -7,8 +7,8 @@
       <div class="col-md-5">
         <div class="card">
           <div class="card-body">
-            <div class="mb-4 py-4">
-              <p>Respuesta</p>
+            <div class="mb-4 py-4" v-for="item in respuesta">
+              <p>{{ item.respuesta }}</p>
             </div>
             <hr>
 

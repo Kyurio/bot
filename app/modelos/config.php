@@ -51,7 +51,8 @@ class config{
         break;
 
         case "whereLike":
-        $this->bd->query("SELECT * WHERE $tabla LIKE $condicion '%". $filtro ."%' ");
+        $this->bd->query("SELECT * FROM $tabla WHERE $condicion LIKE '%$filtro%' ");
+        return $this->bd->registros();
         break;
 
         default:

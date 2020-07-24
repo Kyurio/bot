@@ -18,8 +18,8 @@ class pages extends routes{
 
       $data = json_decode(file_get_contents("php://input"), true);
       $consulta = $data['consultaRecibida'];
-
-      $respuesta = $this->ConfigModelo->select('whereLike', 'pregunta', 'pregunta', $consulta, '', '');
+      $respuesta = $this->ConfigModelo->select('whereLike', 'pregunta', 'pregunta_entrada',  $consulta, '', '');
+    
       echo json_encode($respuesta);
     }
   }
